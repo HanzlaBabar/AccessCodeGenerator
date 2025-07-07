@@ -1,1 +1,1 @@
-web: dotnet AccessCodeGenerator.API.csproj
+web: dotnet AccessCodeGenerator.API.dll
