@@ -1,1 +1,1 @@
-web: dotnet AccessCodeGenerator.API.dll
+web: dotnet AccessCodeGeneratorAPI.dll
