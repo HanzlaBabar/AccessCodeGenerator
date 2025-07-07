@@ -1,0 +1,6 @@
+@AccessCodeGenerator.API_HostAddress = http://localhost:5110
+
+GET {{AccessCodeGenerator.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
