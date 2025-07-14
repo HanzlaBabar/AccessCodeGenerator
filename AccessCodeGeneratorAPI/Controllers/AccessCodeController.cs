@@ -8,7 +8,7 @@ namespace AccessCodeGenerator.API.Controllers
     /// Controller for generating secure temporary access codes.  
     /// </summary>  
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AccessCodeController : ControllerBase
     {
         private readonly AccessCodeService _service = new();
