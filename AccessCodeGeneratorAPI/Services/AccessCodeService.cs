@@ -38,14 +38,14 @@ namespace AccessCodeGenerator.API.Services
         {
             var parts = code.Split('.');
             if (parts.Length != 2)
-                return new ValidateResponse { Valid = false, Expired = false };
+                return new ValidateResponse { Expired = false };
 
             var encodedPayload = parts[0];
             var providedSignature = parts[1];
             var expectedSignature = ComputeHmac(encodedPayload);
 
             if (providedSignature != expectedSignature)
-                return new ValidateResponse { Valid = false, Expired = false };
+                return new ValidateResponse { Expired = false };
 
             string json = Base64UrlEncoder.Decode(encodedPayload);
             using var doc = JsonDocument.Parse(json);
@@ -63,7 +63,7 @@ namespace AccessCodeGenerator.API.Services
 
             return new ValidateResponse
             {
-                Valid = !isExpired,
+                ExpiresAt = exp,
                 Expired = isExpired,
                 Payload = isExpired ? null : data
             };
